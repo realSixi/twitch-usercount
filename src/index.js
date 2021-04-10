@@ -9,7 +9,7 @@ import { getChannelInfo } from "./twitch/twitchservice.js";
 
 const app = express();
 
-app.get("/", async (req, res) => {
+app.get("/api/channelinfo", async (req, res) => {
   return res.send({ ...(await getChannelInfo(CHANNEL)) });
 });
 
