@@ -41,7 +41,6 @@ export async function getChannelInfo(channel) {
     },
   });
 
-  console.log("data result", data)
 
   let channelInfo = {
     ...data.data[0],
