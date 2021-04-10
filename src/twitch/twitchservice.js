@@ -1,6 +1,5 @@
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 let { TWITCH_CLIENT, TWITCH_SECRET } = process.env;
 
@@ -17,7 +16,6 @@ async function getToken() {
 
     _token = access_token;
     _expires = Date.now() + (expires_in - 30000); // 30 seconds safety
-    console.log("OAUTH", "Getting Token");
   }
 
   return _token;
@@ -31,8 +29,6 @@ export async function getChannelInfo(channel) {
     description,
     profile_image_url,
   } = await getUserByName(channel);
-
-  console.log("userinfo", broadcaster_id);
 
   let { data } = await axios.get(`https://api.twitch.tv/helix/streams`, {
     params: {
@@ -54,7 +50,6 @@ export async function getChannelInfo(channel) {
     profile_image_url,
   };
 
-  // console.log(channelInfo)
 
   return channelInfo;
 }
