@@ -2,7 +2,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
-let { TWITCH_CLIENT, TWITCH_SECRET } = process.env;
+let { TWITCH_CLIENT, TWITCH_SECRET, } = process.env;
 
 let _token = undefined;
 let _expires = 0;
