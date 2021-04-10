@@ -1,7 +1,8 @@
-import express from "express";
-import TwitchJs from "twitch-js";
 import dotenv from "dotenv";
 dotenv.config();
+import express from "express";
+import TwitchJs from "twitch-js";
+
 
 const { CHANNEL } = process.env;
 import { getChannelInfo } from "./twitch/twitchservice.js";
