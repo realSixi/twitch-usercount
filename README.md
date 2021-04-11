@@ -5,7 +5,7 @@ Provides a simple API to get channel information about a twitch channel, especia
 Route `/api/channelinfo`:
 returns info about a (configured) channel
 
-**Limits**
+#### Limits
 
 Requests are limited to 50 requests per 15 Minutes per IP
 
