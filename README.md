@@ -6,6 +6,7 @@ Route `/api/channelinfo`:
 returns info about a (configured) channel
 
 **Limits**
+
 Requests are limited to 50 requests per 15 Minutes per IP
 
 ## Setup
