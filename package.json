@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
+    "develop": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -15,7 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "4.17.1",
-    "twitch-js": "^2.0.0-beta.42"
+    "express-rate-limit": "^5.2.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

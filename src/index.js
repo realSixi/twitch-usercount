@@ -1,17 +1,23 @@
 import dotenv from "dotenv";
-dotenv.config();
 import express from "express";
-import cors from 'cors';
-import TwitchJs from "twitch-js";
-
-
-const { CHANNEL, PORT } = process.env;
+import cors from "cors";
+import rateLimit from "express-rate-limit";
+dotenv.config();
 import { getChannelInfo } from "./twitch/twitchservice.js";
 
-const app = express();
-app.options('*', cors())
+const { CHANNEL, PORT } = process.env;
 
-app.get("/api/channelinfo", cors(), async (req, res) => {
+const app = express();
+
+const apiLimiter = rateLimit({
+  windowMs: 1000 * 60 * 15,
+  max: 50,
+});
+
+
+app.use(cors());
+
+app.get("/api/channelinfo", apiLimiter, async (req, res) => {
   return res.send({ ...(await getChannelInfo(CHANNEL)) });
 });
 
