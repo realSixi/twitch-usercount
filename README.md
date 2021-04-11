@@ -2,7 +2,9 @@
 
 Provides a simple API to get channel information about a twitch channel, especially for view count.
 
-Route `/api/channelinfo`:
+#### Routes
+
+`/api/channelinfo`
 returns info about a (configured) channel
 
 #### Limits
