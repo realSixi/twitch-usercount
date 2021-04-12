@@ -2,10 +2,16 @@
 
 Provides a simple API to get channel information about a twitch channel, especially for view count.
 
-#### Routes
+### REST-API
+
+#### Get Channel Info
 
 `/api/channelinfo`
-returns info about a (configured) channel
+
+Returns some Info about a channel. Response-Details differs, wether it's currently streaming or not.
+
+- URL Params:
+    - `channel` - the requested channel-name, e.g. 'twitch'
 
 #### Limits
 
@@ -15,7 +21,7 @@ Requests are limited to 50 requests per 15 Minutes per IP
 
 1. Create an Application at https://dev.twitch.tv/ 
 2. Add OAuth Client + Secret to `.env` File (See `.env-sample`)
-3. Set Channel in `.env` file 
+3. Set Channels in `.env` file (comma seperated, if you want to server the api for several channels)
 4. Install dependencies with `npm install`
 
 ## Run
