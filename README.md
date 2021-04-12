@@ -13,7 +13,7 @@ Returns some Info about a channel. Response-Details differs, wether it's current
 - URL Params:
     - `channel` - the requested channel-name, e.g. 'twitch'
 - Example Request:
-    -  ```curl 'http://localhost:3000/api/channelinfo?channel=projektiontv'```
+    -  ```curl 'http://localhost:3000/api/channelinfo?channel=twitch'```
 
 #### Limits
 
