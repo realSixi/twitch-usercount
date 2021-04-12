@@ -17,7 +17,7 @@ const apiLimiter = rateLimit({
   max: 50,
 });
 
-app.get("/api/channelinfo", apiLimiter, async (req, res, next) => {
+app.get("/api/channelinfo", cors(), apiLimiter, async (req, res, next) => {
   try {
     const { channel = 'projektiontv' } = req.query;
 
@@ -31,7 +31,7 @@ app.get("/api/channelinfo", apiLimiter, async (req, res, next) => {
   }
 });
 
-app.use(cors());
+
 
 /*
   Error Handling: send error status or default (500)
@@ -42,4 +42,5 @@ app.use((err, req, res, next) => {
     status: err.status || 500,
   });
 });
+
 app.listen(PORT || 3000);
