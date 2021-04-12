@@ -8,7 +8,7 @@ import StatusError from "./error.js";
 
 const { CHANNELS, PORT } = process.env;
 
-const allowedChannels = CHANNELS.split(",").map((c) => c.replaceAll(" ", ""));
+const allowedChannels = CHANNELS.split(",").map((c) => c.replace(/ /g, ""));
 
 const app = express();
 
